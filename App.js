@@ -1,7 +1,6 @@
 import React from 'react';
-import Index from './src/Index';
 import { Provider as PaperProvider } from 'react-native-paper';
-
+import Index from './src/Index';
 
 export default function Main() {
   return (
