@@ -3,7 +3,7 @@ import { View, StyleSheet } from 'react-native';
 import { Switch, withTheme, Text } from 'react-native-paper';
 import { PreferencesContext } from '../src/PreferencesContext';
 
-function SettingScreen() {
+const SettingScreen = () => {
   const { toggleTheme, isThemeDark } = useContext(PreferencesContext);
 
   const onToggleSwitch = () => {
@@ -23,6 +23,6 @@ function SettingScreen() {
       <Switch value={isThemeDark} onValueChange={onToggleSwitch} />
     </View>
   );
-}
+};
 
 export default withTheme(SettingScreen);
