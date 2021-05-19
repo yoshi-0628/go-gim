@@ -19,7 +19,7 @@ function SettingScreen() {
   });
   return (
     <View style={styles.container}>
-      <Text>NewSetting Screen</Text>
+      <Text>theme</Text>
       <Switch value={isThemeDark} onValueChange={onToggleSwitch} />
     </View>
   );
