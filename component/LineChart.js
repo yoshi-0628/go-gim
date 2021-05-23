@@ -66,8 +66,7 @@ const Chart = () => {
           width={windowWidth * 0.99}
           height={500}
           chartConfig={chartConfig}
-          yAxisSuffix={'%'}
-          fromZero={true}
+          yAxisSuffix={'kg'}
           bezier
         />
       </View>

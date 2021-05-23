@@ -6,7 +6,7 @@ const Header = () => {
 
   return (
     <Appbar.Header>
-      <Appbar.Content title="sss" subtitle="Subtitle" />
+      <Appbar.Content />
       <Appbar.Action icon="dots-vertical" onPress={handleMore} />
     </Appbar.Header>
   );
