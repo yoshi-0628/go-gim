@@ -15,6 +15,12 @@ const WeightScreen = () => {
       justifyContent: 'center',
       height: 60,
     },
+    genjitsuText: {
+      fontSize: 20,
+    },
+    kgText: {
+      fontSize: 20,
+    },
     bottomArea: {
       alignItems: 'center',
       justifyContent: 'center',
@@ -33,8 +39,8 @@ const WeightScreen = () => {
     <ScrollView style={styles.container}>
       <Header />
       <View style={styles.topArea}>
-        <Text>現在</Text>
-        <Text>67kg</Text>
+        <Text style={styles.genjitsuText}>現在</Text>
+        <Text style={styles.kgText}>67kg</Text>
       </View>
       <LineChart />
       <View>
