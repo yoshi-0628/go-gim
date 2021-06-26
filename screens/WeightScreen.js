@@ -1,6 +1,7 @@
-import * as React from 'react';
+import React, { useState } from 'react';
 import { View, StyleSheet, ScrollView } from 'react-native';
 import { withTheme, Text, FAB } from 'react-native-paper';
+import Modal from 'react-native-modal';
 import Header from '../component/Header';
 import LineChart from '../component/LineChart';
 
@@ -34,6 +35,11 @@ const WeightScreen = () => {
       bottom: 0,
     },
   });
+  const [isModalVisible, setModalVisible] = useState(false);
+
+  const toggleModal = () => {
+    setModalVisible(!isModalVisible);
+  };
 
   return (
     <ScrollView style={styles.container}>
@@ -44,12 +50,17 @@ const WeightScreen = () => {
       </View>
       <LineChart />
       <View>
-        <FAB
-          style={styles.fab}
-          icon="plus"
-          onPress={() => console.log('Pressed')}
-        />
+        <FAB style={styles.fab} icon='plus' onPress={() => toggleModal()} />
       </View>
+      <Modal
+        isVisible={isModalVisible}
+        swipeDirection={['up', 'left', 'right', 'down']}
+        onSwipeComplete={() => setModalVisible(false)}
+      >
+        <View style={{ flex: 1, backgroundColor: 'white' }}>
+          <Text>I am the modal content!</Text>
+        </View>
+      </Modal>
     </ScrollView>
   );
 };

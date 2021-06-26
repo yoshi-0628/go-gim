@@ -28,6 +28,7 @@
                     ".js"
                 ]
             }
-        ]
+        ],
+        "jsx-quotes": ["error", "prefer-single"]
     }
 }
