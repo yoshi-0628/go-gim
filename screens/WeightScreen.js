@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { View, StyleSheet, ScrollView } from 'react-native';
-import { withTheme, Text, FAB } from 'react-native-paper';
+import { withTheme, Text, FAB, Button } from 'react-native-paper';
 import Modal from 'react-native-modal';
 import Header from '../component/Header';
 import LineChart from '../component/LineChart';
+import InputSpinner from 'react-native-input-spinner';
 
 const WeightScreen = () => {
   // スタイル群
@@ -57,8 +58,40 @@ const WeightScreen = () => {
         swipeDirection={['up', 'left', 'right', 'down']}
         onSwipeComplete={() => setModalVisible(false)}
       >
-        <View style={{ flex: 1, backgroundColor: 'white' }}>
-          <Text>I am the modal content!</Text>
+        <View style={{ backgroundColor: 'white', padding: 10 }}>
+          <InputSpinner
+            style={{ justifyContent: 'center' }}
+            max={999}
+            min={20}
+            step={0.1}
+            colorMax={'#f04048'}
+            colorMin={'#40c5f4'}
+            value={60}
+            skin='paper'
+            type='float'
+            onChange={(num) => {
+              console.log(num);
+            }}
+          />
+          <View style={{ flexDirection: 'row' }}>
+            <Button
+              style={{ width: '50%' }}
+              color='red'
+              icon='cancel'
+              mode='Outlined'
+              onPress={() => setModalVisible(false)}
+            >
+              キャンセル
+            </Button>
+            <Button
+              style={{ width: '50%' }}
+              icon='check'
+              mode='Outlined'
+              onPress={() => console.log('Pressed')}
+            >
+              登録する
+            </Button>
+          </View>
         </View>
       </Modal>
     </ScrollView>
