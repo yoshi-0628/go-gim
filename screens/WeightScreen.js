@@ -2,9 +2,10 @@ import React, { useState } from 'react';
 import { View, StyleSheet, ScrollView } from 'react-native';
 import { withTheme, Text, FAB, Button } from 'react-native-paper';
 import Modal from 'react-native-modal';
+import firestore from '@react-native-firebase/firestore';
+import InputSpinner from 'react-native-input-spinner';
 import Header from '../component/Header';
 import LineChart from '../component/LineChart';
-import InputSpinner from 'react-native-input-spinner';
 
 const WeightScreen = () => {
   // スタイル群
